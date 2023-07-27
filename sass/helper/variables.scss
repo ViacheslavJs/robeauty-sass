@@ -1,0 +1,30 @@
+/* main variables */
+$color_base: #ffffff;
+$text_color: lighten(#404040, 20%);
+$page-color-style: #f2c8a2;
+$color_hover: silver;
+
+$header_bg: rgba(256, 256, 256, 1);
+
+$header-logo_bg: #b4d249;
+$header-logo_hover: $color_hover;
+$header-line_bg: silver;
+
+$header_height: 80.4px;
+$header_mobile-height: 53.6px; 
+
+$icon-menu_color: #646464;
+$icon-menu_hover: $color_hover;
+$link-menu_color: #646464;
+$link-menu_hover: $color_hover;
+$link-menu-active_color: silver;
+
+/*$footer_bg: rgba(256, 256, 256, 1);*/
+$footer-logo_hover: $color_hover;
+
+$icon-social_color: darken(silver, 8%);
+$icon-social_hover: $page-color-style;
+
+
+
+

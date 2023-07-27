@@ -1,0 +1,86 @@
+/* Операторы:
+  & - имитирует родителя
+  > - обращение к первому дочернему элементу */
+
+/*@import "base/scroll-animation.scss";/**/
+
+@import "helper/variables.scss";
+@import "helper/brakepoints.scss";
+
+/*@import "layout/header.scss";/**/
+/*@import "layout/footer.scss";/**/
+
+@import "index.scss";/**/
+/*@import "pages/company.scss";/**/
+/*@import "pages/shipping.scss";/**/
+/*@import "pages/service.scss";/**/
+/*@import "pages/contacts.scss";/**/
+
+/*@import "components/menu.scss";/**/
+/*@import "components/logo.scss";/**/
+/*@import "components/messengers.scss";/**/
+/*@import "components/b-lightbox.scss";/**/
+/*@import "components/a-lightbox.scss";/**/
+
+/*@import "section/contacts.scss";/**/
+
+/* reset, normalize */
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%; 
+  /*font-size: 16px;*/
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;  
+  padding: 0; 
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;     
+  min-height: 100vh; 
+  margin: 0;             
+  padding: 0; 
+  overflow: hidden;
+}
+
+.main {    
+  margin-top: $header_height; 
+  @media screen and (max-width: $mobile-big_end-point) {
+    margin-top: $header_mobile-height;
+  }
+}
+
+.container {
+  max-width: $mobile-big_end-point;           
+  margin: 0 auto;
+  padding: 0 15px;
+  @media screen and (max-width: 350px) {
+    padding: 0 7px;
+  }
+ 
+}
+
+a { 
+  text-decoration: none;    
+  cursor: pointer;  
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+
