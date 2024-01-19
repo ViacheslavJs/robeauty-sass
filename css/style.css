@@ -1,0 +1,899 @@
+@charset "UTF-8";
+/* Операторы:
+  & - имитирует родителя
+  > - обращение к первому дочернему элементу */
+/*@import "base/scroll-animation.scss";/**/
+/* main variables */
+/*$footer_bg: rgba(256, 256, 256, 1);*/
+/* при контейнере меньше 1000 - выпадение текста - проверить точки для grid или высоту текст-контейнера в tile! */
+/*@import "layout/header.scss";/**/
+/*@import "layout/footer.scss";/**/
+/* variable modules */
+/* #f1d0ba */
+/* module bg-layer */
+/* scroll/fixed */
+/*$bg-layer-brand_display: none; /* block/none */
+/* module grid-box */
+/* none/1px solid #ffffff */
+/* rgba(0, 0, 0, 0.3)/transparent */
+/* flex/none */
+/* scroll/fixed */
+.page-home {
+  font-family: sans-serif;
+}
+
+/***** TODO - module robeauty *********************/
+.robeauty {
+  /*TODO - https://mybrandnewlogo.com/ru/generator-gradienta-cveta */
+  background-image: linear-gradient(5deg, #ffffff 0, #ffffff 16.67%, #ffffff 33.33%, #fff1e1 50%, #edd6c1 66.67%, #dfc1a9 83.33%, #d7b199 100%);
+  min-height: 60vh;
+  padding-top: 50px;
+  background-size: cover;
+  background-position: 50% 55%;
+  background-repeat: no-repeat;
+}
+
+.robeauty__title {
+  margin: 0;
+  padding: 5px 0;
+  font-family: serif;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .robeauty__title {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 645px) {
+  .robeauty__title {
+    font-size: 1.8em;
+  }
+}
+.robeauty__text {
+  max-width: 100%;
+  margin: 15px 0 20px 0;
+  padding: 5px 0;
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+  line-height: 2;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .robeauty__text {
+    text-align: left;
+  }
+}
+.robeauty__title-span {
+  font-weight: 900;
+}
+
+.robeauty__text-span {
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.robeauty__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 1001px) {
+  .robeauty__content {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.robeauty__info {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  position: relative;
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 250px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  padding: 20px 0;
+}
+
+@media screen and (min-width: 580px) {
+  .robeauty__info {
+    max-width: 60%;
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 1001px) {
+  .robeauty__info {
+    max-width: 100%;
+    margin-top: 175px;
+    margin-bottom: 50px;
+    align-self: flex-end;
+  }
+}
+.robeauty__discount {
+  position: absolute;
+  top: -25px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 3em;
+  padding: 1.5em;
+  border-radius: 50%;
+  background: #b4d249;
+  font-size: 2.2em;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 580px) {
+  .robeauty__discount {
+    font-size: 2.4em;
+  }
+}
+.robeauty__product-image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.robeauty__product-image:hover {
+  opacity: 0.7;
+  transition: 0.4s ease;
+}
+
+.robeauty__link-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .robeauty__link-box {
+    justify-content: center;
+  }
+}
+.robeauty__link {
+  display: block;
+  padding: 15px 45px;
+  border-radius: 50px;
+  background: #b4d249;
+  text-decoration: none;
+}
+
+.robeauty__link:hover {
+  background: #f2c8a2;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.robeauty__link-text {
+  display: block;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.decor-bg {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  /*align-self: flex-start; /* TODO */
+  position: relative;
+  right: 0;
+  max-width: calc(100% - 25px);
+  margin: 50px 0 50px 0;
+  background: #b4d249;
+}
+
+@media screen and (min-width: 580px) {
+  .decor-bg {
+    max-width: 60%;
+    margin: 50px 0 50px 0;
+  }
+}
+.decor-bg__images-box {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  position: relative;
+  max-width: 100%;
+  margin-top: 25px;
+  margin-right: 0;
+  margin-bottom: -25px;
+  margin-left: -25px;
+  padding: 0;
+}
+
+@media screen and (min-width: 580px) {
+  .decor-bg__images-box {
+    max-width: 100%;
+    right: 25px;
+    top: 25px;
+    margin: 0; /* TODO - or */
+    /*bottom: $image-shift_px;
+    margin: 0; /* TODO - or */
+    /*margin-top: $image-shift_px; 
+    margin-right: auto;
+    margin-bottom: $image-shift_px;
+    margin-left: auto; /* TODO - or */
+  }
+}
+.decor-bg__images-box::after {
+  display: none; /* TODO - display: block */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.5); /* эффект киноплёнки*/
+  /*background: rgba(256, 256, 256, 0.2);*/
+  /*background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.9)); /* затенение "стальное небо" */
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)); /* затенение "стальное небо" */
+}
+
+.decor-bg__image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.decor-bg__text {
+  position: absolute;
+  z-index: 10;
+  margin: 50px 0 -150px 0;
+  padding-left: 10px;
+  padding-right: 8px;
+  border-right: 1px solid #9bba2e;
+  text-align: left;
+  font-size: 19.2px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: #bc8f68;
+}
+
+.decor-bg__span--style_font {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #f2c8a2;
+}
+
+.decor-bg__span--style_bg {
+  position: absolute;
+  left: 6em;
+  bottom: -0.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 1.7em;
+  height: 1.7em;
+  padding: 0.3em;
+  font-size: 1.2em;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 50%;
+  background: #b4d249;
+  color: #ffffff;
+}
+
+/********** module robeauty ***********/
+/***** TODO - module shimmer *********************/
+.shimmer {
+  position: relative; /* TODO -for &::after */
+  max-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  background-image: linear-gradient(5deg, #ffffff 0, #ffffff 16.67%, #ffffff 33.33%, #fff1e1 50%, #edd6c1 66.67%, #dfc1a9 83.33%, #d7b199 100%);
+  display: block;
+  max-width: 100%;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: 50% 55%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*background: url('../img/bg.jpg') 50% 55% / cover no-repeat fixed;*/
+}
+
+.shimmer::after {
+  display: none; /* TODO - display: block - эффект киноплёнки*/
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.5);
+  /*background: rgba(256, 256, 256, 0.2);*/
+}
+
+.shimmer__content {
+  position: relative;
+  z-index: 40;
+}
+
+.shimmer__title {
+  margin: 0 auto;
+  padding: 5px 0;
+  font-family: serif;
+  font-size: calc(35px + 68 * (100vw - 320px) / 1920);
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 645px) {
+  .shimmer__title {
+    max-width: 70%;
+    font-size: 3.2rem;
+  }
+}
+.shimmer__text {
+  margin: 0 auto;
+  padding: 5px 0;
+  font-size: 1.5rem;
+  letter-spacing: 0px;
+  line-height: 2;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .shimmer__text {
+    max-width: 80%;
+  }
+}
+.shimmer__cost {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  max-width: 100%;
+  margin: 25px auto 25px auto;
+  padding: 0;
+  font-size: 16px;
+  padding: 8px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 25px;
+  background: #b4d249;
+}
+
+/***** module shimmer *********************/
+/***** TODO - module grid-box *********************/
+.grid-box {
+  max-width: 100%;
+  /*margin-bottom: 10px;*/
+  padding: 50px 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+}
+
+@media screen and (min-width: 530px) {
+  .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 820px) {
+  .grid-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .grid-box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.tile {
+  padding: 10px 0;
+  border-radius: 20px;
+  border: none;
+  background: #d9b495;
+  box-shadow: 0; /* 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* TODO - shadow */
+}
+
+@media screen and (min-width: 991px) {
+  .tile {
+    /*width: 215px;*/
+  }
+}
+.tile__link {
+  display: none; /* flex/none */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.tile__link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.tile__link-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 2.7em;
+  color: #f6f6f6;
+  border-radius: 50%;
+  background: #f2c8a2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* TODO - https://www.cssmatic.com/box-shadow - Box Shadow CSS Generator */
+  /*-webkit-box-shadow: 0px 16px 19px -10px rgba(204,204,204,1);
+  -moz-box-shadow: 0px 16px 19px -10px rgba(204,204,204,1);
+  box-shadow: 0px 16px 19px -10px rgba(204,204,204,1); */
+  box-shadow: 0px 6px 10px 1px rgba(112, 112, 112, 0.19);
+}
+
+.tile__title {
+  height: 2.73em;
+  margin: 0.2em 0;
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+  word-break: break-all;
+  color: #ffffff;
+}
+
+.tile__text {
+  height: 13em;
+  margin: 5px 0;
+  padding: 5px 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: left;
+  color: white;
+}
+
+.tile__name {
+  font-weight: 600;
+}
+
+.tile__product-image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+/***** module grid-box *********************/
+/***** TODO - module tile-list *******/
+.tile-list {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.tile-list__list {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.tile-list__list-item {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  margin: 0.32em 0.32em;
+  padding: 0.2em 0 0.2em 1.2em;
+  text-align: left;
+}
+
+.tile-list__list-item::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: -0.6em;
+  width: 1em;
+  height: 0.5em;
+  border-left: 0.187em solid #c0d966;
+  border-bottom: 0.187em solid #c0d966;
+  transform: rotate(-45deg);
+}
+
+.tile-list__list-text {
+  font-size: 1.1em;
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+/********** module tile-list ***********/
+/***** TODO - module tanning-oil *********************/
+.tanning-oil {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  min-height: auto;
+  padding: 50px 0;
+  overflow: hidden;
+  /*TODO - https://mybrandnewlogo.com/ru/generator-gradienta-cveta */
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), linear-gradient(270deg, #f8e0c7 0, #efd3b8 25%, #e6c4a7 50%, #ddb597 75%, #d5a88a 100%); /* затенение "стальное небо" */
+  background-image: linear-gradient(5deg, #ffffff 0, #ffffff 16.67%, #ffffff 33.33%, #fff1e1 50%, #edd6c1 66.67%, #dfc1a9 83.33%, #d7b199 100%);
+  background-attachment: fixed;
+}
+
+.tanning-oil__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .tanning-oil__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.tanning-oil__title {
+  margin: 0;
+  padding: 5px 0;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: calc(13px + 61 * (100vw - 320px) / 1920);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  /*text-transform: uppercase;*/
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .tanning-oil__title {
+    font-size: 1.7em;
+  }
+}
+.tanning-oil__text {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  max-width: 100%;
+  min-height: 5.2rem;
+  margin: 20px 0 0 0;
+  padding-right: calc(27% + 10px);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  line-height: 2;
+  text-align: left;
+  /* https://mybrandnewlogo.com/ru/generator-gradienta-cveta */
+  /* base color - #f2c8a2 */
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(circle at 55.67% 50%, #ffe1bd 0, #fad5b0 25%, #f2c8a2 50%, #eabb94 75%, #e3af89 100%);
+  background-image: radial-gradient(circle at 55.67% 50%, #ffe1bd 0, #fad5b0 25%, #f2c8a2 50%, #eabb94 75%, #e3af89 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 645px) {
+  .tanning-oil__text {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tanning-oil__text {
+    padding: 10px 30px;
+  }
+}
+.tanning-oil__span {
+  padding: 0 10px;
+  font-size: 1.8em;
+  font-weight: 900;
+}
+
+.tanning-oil__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 10px;
+  padding: 15px 45px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  outline: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);     
+  transition: background-color 0.2s ease 0s;*/
+  background: #b4d249;
+}
+
+.tanning-oil__link:hover {
+  background: #f2c8a2;
+  transition: 0.4s ease;
+}
+
+.button-flex-alignment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+.product {
+  padding: 0;
+  flex-basis: 50%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.product__offer-text {
+  max-width: 100%;
+  margin: 25px auto 25px auto;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2.5;
+  text-align: center;
+  color: #c78341;
+}
+
+.product__offer-discount {
+  display: inline-block;
+  width: 3.1em;
+  height: 3.1em;
+  margin: 10px 0;
+  padding: 0.33em;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at 57.65% 28.99%, #ffeacf 0, #fddabe 25%, #f2c8ab 50%, #e7b699 75%, #dea68b 100%);
+}
+
+.product__price-text {
+  max-width: 100%;
+  margin: 25px auto 25px auto;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2;
+  text-align: left;
+  color: #c78341;
+}
+
+.product__price-cost {
+  padding: 8px;
+  font-size: 1.14em;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 25px;
+  background: #b4d249;
+}
+
+.product-list {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.product-list__list {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.product-list__list-item {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  margin: 0.32em 0.32em;
+  padding: 0.2em 0 0.2em 1.2em;
+  text-align: left;
+}
+
+.product-list__list-item::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: -0.6em;
+  width: 1em;
+  height: 0.5em;
+  border-left: 0.187em solid #b4d249;
+  border-bottom: 0.187em solid #b4d249;
+  transform: rotate(-45deg);
+}
+
+.product-list__list-text {
+  color: #c78341;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-size: 1.1em;
+}
+
+.tanning-oil__images-box {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50%;
+  max-width: 100%;
+  margin: 100px auto 50px auto;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .tanning-oil__images-box {
+    margin-top: 75px;
+  }
+}
+.tanning-oil__image {
+  display: block;
+  max-width: 80%;
+  margin: 0 auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.tanning-oil__image.front {
+  /*margin-top: -80px;*/
+  margin-top: -32%;
+  margin-left: -50px;
+  transform: rotate(-20deg);
+}
+
+@media screen and (max-width: 768px) {
+  .tanning-oil__image.front {
+    margin-left: -5px;
+  }
+}
+.tanning-oil__image.back {
+  /*margin-bottom: -80px;*/
+  margin-top: -200px;
+  margin-right: 50px;
+  transform: rotate(20deg);
+}
+
+@media screen and (max-width: 768px) {
+  .tanning-oil__image.back {
+    margin-top: -60px;
+    margin-right: -5px;
+  }
+}
+/**/
+/*@import "pages/company.scss";/**/
+/*@import "pages/shipping.scss";/**/
+/*@import "pages/service.scss";/**/
+/*@import "pages/contacts.scss";/**/
+/*@import "components/menu.scss";/**/
+/*@import "components/logo.scss";/**/
+/*@import "components/messengers.scss";/**/
+/*@import "components/b-lightbox.scss";/**/
+/*@import "components/a-lightbox.scss";/**/
+/*@import "section/contacts.scss";/**/
+/* reset, normalize */
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /*font-size: 16px;*/
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main {
+  margin-top: 80.4px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    margin-top: 53.6px;
+  }
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    padding: 0 7px;
+  }
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+
+
+/*# sourceMappingURL=style.css.map */
