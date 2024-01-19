@@ -12,7 +12,7 @@
     "watch": "sass sass/main.scss css/style.css -w",
     "compile": "sass sass/main.scss css/style.css",
     "prefix": "postcss css/style.css --use autoprefixer -o css/style.css",
-    "compress": "sass css/style.css css/style.css --style expanded",
+    "compress": "sass css/style.css css/style.css --style compressed",
     "build": "npm-run-all compile prefix compress"
   }
 }
